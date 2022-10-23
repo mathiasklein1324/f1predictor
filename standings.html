@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Standings
+{% endblock %}
+
+{% block main %}
+
+<table id="standings" class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Permanent Number</th>
+            <th>Wins</th>
+            <th>Constructor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for driver in standings_list %}
+                <tr>
+                    <td>{{ driver["position"] }}</td>
+                    <td>{{ driver["code"] }}</td>
+                    <td>{{ driver["name"] }}</td>
+                    <td>{{ driver["points"] }}</td>
+                    <td>{{ driver["perm_number"] }}</td>
+                    <td>{{ driver["wins"] }}</td>
+                    <td>{{ driver["constructor"] }}</td>
+                </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

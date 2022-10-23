@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome {
+    flex-direction: column;
+    margin: 20px;
+}
+
+span.red {
+    color: #db7d74;
+}
+
+table {
+    justify-content: center;
+    align-items: center;
+}
+
+#standings {
+    width: 1000px;
+}
+
+#standings tbody {
+    border: black 2px solid;
+}
+
+table.table {
+    border: black 2px solid;
+}
+
+#pred_tables {
+    display: flex;
+}
+
+#pred_tables thead {
+    height: 75px;
+}
+
+/* form {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    justify-content: space-around;
+} */
+
+#apology {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    border: grey 2px solid
+}

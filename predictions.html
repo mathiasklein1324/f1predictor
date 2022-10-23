@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Predictions
+{% endblock %}
+
+
+{% block main %}
+
+<form action="/results" method="post">
+    <div id="pred_tables">
+        <table id="pred-1" class="table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for driver in standings_list %}
+                <tr>
+                    <td>{{ driver["position"] }}</td>
+                    <td>{{ driver["name"] }}</td>
+                    <td>{{ driver["points"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table id="pred-2" class="table">
+            <thead>
+                <tr>
+                    {% for race in rem_races_list %}
+                    <th>Race {{ race["round"] }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for driver in standings_list %}
+                {% set i = driver["position"] %}
+                <tr>
+                    {% for race in rem_races_list %}
+                    {% set j = race["round"] %}
+                        <td class="second"> <input type="number" id="prediction{{i}}{{j}}" name="prediction{{i}}{{j}}" min="0" max="20"> </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+<button type="submit" value="prediction">Submit</button>
+</form>
+
+
+{% endblock %}
