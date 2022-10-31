@@ -1,1 +1,1 @@
-web:gunicorn__init__:app
+web: python app.py
